@@ -1,0 +1,56 @@
+/* ============================================================
+   TOKENS — paleta, tipografía y escala base de SkillCode Panamá
+   ============================================================ */
+
+:root {
+  /* ---- Paleta ---- */
+  --paper: #F6F1E2;         /* fondo cálido, tipo papel */
+  --paper-deep: #EEE6D1;    /* variación de fondo para franjas alternas */
+  --surface: #FFFFFF;       /* superficies / cards */
+  --ink: #1F2B29;           /* texto principal, carbón cálido */
+  --ink-soft: rgba(31, 43, 41, 0.66);
+  --ink-muted: rgba(31, 43, 41, 0.44);
+  --rule: rgba(31, 43, 41, 0.14);   /* líneas tipo cuaderno */
+
+  --brand: #0E6E5A;         /* jade profundo — marca */
+  --brand-dark: #0A5346;
+  --amber: #E8A23A;         /* acento cálido — energía, progreso */
+  --amber-dark: #C6841F;
+  --azure: #2E77B0;         /* acento frío — info, enlaces secundarios */
+
+  --on-brand: #FBF8EF;
+
+  /* ---- Tipografía ----
+     Display: Fraunces (serif cálida, con carácter propio, "cuaderno")
+     Body: Manrope (humanista, cálida, legible)
+     Mono: JetBrains Mono (fragmentos de código en lecciones) */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --fs-hero: clamp(2.4rem, 5vw, 3.8rem);
+  --fs-h1: clamp(1.9rem, 3.4vw, 2.6rem);
+  --fs-h2: clamp(1.4rem, 2.4vw, 1.8rem);
+  --fs-body: 1rem;
+  --fs-small: 0.9rem;
+
+  /* ---- Espaciado ---- */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-5: 2.75rem;
+  --sp-6: 3.5rem;
+  --sp-7: 4.5rem;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  --shadow-card: 0 10px 28px rgba(31, 43, 41, 0.08);
+  --shadow-lift: 0 16px 36px rgba(31, 43, 41, 0.14);
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --max-width: 1180px;
+}

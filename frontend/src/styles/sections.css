@@ -1,0 +1,323 @@
+/* ============================================================
+   SECCIONES DE CONTENIDO
+   ============================================================ */
+
+/* ---- Pilares (Técnico / Blando / Profesional) ---- */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+
+.pillar {
+  padding: var(--sp-4);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.pillar__mark { font-family: var(--font-mono); font-size: 0.75rem; color: var(--amber-dark); margin-bottom: var(--sp-2); display: block; }
+.pillar__title { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: var(--sp-1); }
+.pillar__desc { color: var(--ink-soft); font-size: var(--fs-small); }
+
+@media (max-width: 780px) {
+  .pillars { grid-template-columns: 1fr; }
+}
+
+/* ---- Cómo funciona (secuencia real -> numeración justificada) ---- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+.step__num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--brand);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: var(--sp-2);
+}
+
+.step__title { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.4rem; }
+.step__desc { color: var(--ink-soft); font-size: var(--fs-small); }
+
+@media (max-width: 780px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+/* ---- Catálogo / Course cards ---- */
+.catalog__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+
+.catalog__filters { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.filter-chip {
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  transition: all 0.2s var(--ease);
+}
+
+.filter-chip.is-active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.catalog__search {
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  font-size: 0.86rem;
+  min-width: 220px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+
+.course-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+  border-top: 3px solid var(--accent-color, var(--brand));
+}
+
+.course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+
+.course-card__top { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--sp-2); }
+.course-card__title { font-family: var(--font-display); font-size: 1.15rem; margin: 0.3rem 0 0.4rem; }
+.course-card__summary { color: var(--ink-soft); font-size: var(--fs-small); flex: 1; }
+.course-card__meta { display: flex; gap: var(--sp-2); align-items: center; font-size: 0.78rem; color: var(--ink-muted); margin-top: var(--sp-1); }
+.course-card__footer { margin-top: var(--sp-2); }
+
+.empty-state {
+  text-align: center;
+  padding: var(--sp-6) var(--sp-3);
+  color: var(--ink-soft);
+}
+
+.empty-state__title { font-family: var(--font-display); font-size: 1.3rem; color: var(--ink); margin-bottom: var(--sp-1); }
+
+@media (max-width: 980px) { .course-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .course-grid { grid-template-columns: 1fr; } }
+
+/* ---- Detalle de curso ---- */
+.course-detail__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-5);
+}
+
+.course-detail__title { font-family: var(--font-display); font-size: var(--fs-h1); margin: var(--sp-1) 0 var(--sp-2); }
+.course-detail__meta { display: flex; gap: var(--sp-2); flex-wrap: wrap; margin-bottom: var(--sp-2); }
+
+.course-detail__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--sp-6);
+}
+
+.syllabus-list { display: flex; flex-direction: column; }
+
+.syllabus-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+.syllabus-item__index {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--brand);
+  width: 24px;
+}
+
+.enroll-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+}
+
+.enroll-card__row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); font-size: var(--fs-small); }
+.enroll-card__row:last-of-type { border-bottom: none; }
+.enroll-card__label { color: var(--ink-muted); }
+.enroll-card__value { font-weight: 600; }
+
+@media (max-width: 900px) {
+  .course-detail__grid { grid-template-columns: 1fr; }
+  .enroll-card { position: static; }
+}
+
+/* ---- Auth forms ---- */
+.auth-wrap {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-6) var(--sp-3);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-card);
+}
+
+.auth-card__title { font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 0.4rem; }
+.auth-card__desc { color: var(--ink-soft); font-size: var(--fs-small); margin-bottom: var(--sp-4); }
+
+.field { margin-bottom: var(--sp-3); }
+.field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--ink); }
+
+.field input, .field textarea {
+  width: 100%;
+  padding: 0.75rem var(--sp-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  font-size: 0.95rem;
+  transition: border-color 0.2s var(--ease);
+}
+
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--brand); background: var(--surface); }
+
+.auth-card__footer { text-align: center; margin-top: var(--sp-3); font-size: var(--fs-small); color: var(--ink-soft); }
+.auth-card__footer a { color: var(--brand); font-weight: 600; }
+
+/* ---- Dashboard ---- */
+.dash-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-5); }
+.dash-greeting { color: var(--ink-soft); }
+
+.dash-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
+
+.enrollment-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+}
+
+.enrollment-card__title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.3rem; }
+.enrollment-card__meta { font-size: 0.8rem; color: var(--ink-muted); margin-bottom: var(--sp-2); }
+
+.progress-track { height: 8px; background: var(--paper-deep); border-radius: var(--radius-full); overflow: hidden; margin-bottom: 0.5rem; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--brand), var(--amber)); border-radius: var(--radius-full); transition: width 0.6s var(--ease); }
+.progress-label { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--ink-muted); margin-bottom: var(--sp-2); }
+
+.mentoring-note {
+  background: var(--paper-deep);
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+  margin-top: var(--sp-5);
+}
+
+.mentoring-note strong { color: var(--ink); }
+
+@media (max-width: 720px) { .dash-grid { grid-template-columns: 1fr; } }
+
+/* ---- Estados de carga ---- */
+.loading-dots { font-family: var(--font-mono); color: var(--ink-muted); font-size: 0.85rem; padding: var(--sp-4) 0; }
+
+/* ---- Panel admin ---- */
+.admin-table { display: flex; flex-direction: column; gap: var(--sp-2); }
+
+.admin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+}
+
+.admin-row__main { display: flex; flex-direction: column; gap: 0.3rem; }
+.admin-row__title { font-family: var(--font-display); font-size: 1.05rem; }
+.admin-row__meta { font-size: 0.8rem; color: var(--ink-muted); }
+.admin-row__actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.btn-sm-like { padding: 0.55rem 1rem; font-size: 0.8rem; }
+.btn-danger { border-color: #9A3B27; color: #9A3B27; }
+.btn-danger:hover { background: #9A3B27; color: var(--paper); }
+
+.admin-form { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-md); padding: var(--sp-4); }
+.admin-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-2); }
+
+.admin-form select {
+  width: 100%;
+  padding: 0.75rem var(--sp-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  font-size: 0.95rem;
+}
+
+.admin-form input[type="file"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--rule);
+  background: var(--paper);
+  font-size: 0.85rem;
+}
+
+.admin-materials__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--sp-5); margin-top: var(--sp-4); }
+
+@media (max-width: 900px) {
+  .admin-materials__grid { grid-template-columns: 1fr; }
+  .admin-form__row { grid-template-columns: 1fr; }
+}
+
+/* ---- Materiales (vista de estudiante) ---- */
+.materials-list { display: flex; flex-direction: column; gap: var(--sp-2); }
+
+.material-item {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: var(--sp-2) var(--sp-3);
+}
+
+.material-item__body h4 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.2rem; }
+.material-item__body p { color: var(--ink-soft); font-size: 0.9rem; }
+.material-item__body a { color: var(--brand); font-size: 0.9rem; font-weight: 600; word-break: break-word; }
+.material-item__body a:hover { text-decoration: underline; }
